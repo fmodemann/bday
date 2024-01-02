@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,26 +8,20 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: white;
             text-align: center;
-            padding: 50px;
+            padding: 20px 50px 20px 50px ;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
-            height: 100vh; /* Set the body height to 100% of the viewport height */
+            /* Set the body height to 100% of the viewport height */
             margin: 0;
         }
 
         h1 {
             font-size: 36px;
-            color: #333;
-        }
-
-        .image-container {
-            max-width: 100%; /* Limit the image container to 80% of the screen width */
-            max-height: 80vh; /* Limit the image container to 80% of the screen height */
-            display: none; /* Initially hide the image container */
+            color: black;
         }
 
         img {
@@ -36,8 +31,22 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
+        #firstPart,
+        #secondPart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 50vh;
+            max-height: 50vh;
+        }
+
+        #secondPart {
+            display: none;
+        }
+
         #password-input {
             padding: 10px;
+            margin-top: 15px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
@@ -53,29 +62,35 @@
         }
     </style>
 </head>
+
 <body>
-    <h1>Wir fangen mal ganz einfach an :)</h1>
-    <input type="password" id="password-input" placeholder="Enter Password">
-    <button id="verify-button">Verify Password</button>
-    <div class="image-container" id="image-container">
-        <img src="picture.jpeg" alt="Puzzle Image">
+    <div id="firstPart">
+        <h1>Mein Geburtsjahr</h1>
+        <img src="picture1.jpeg" alt="Puzzle Image 1">
+        <input type="password" id="password-input" placeholder="...">
+        <button id="verify-button">Prüfen</button>
+    </div>
+    <div id="secondPart">
+        <h1 id="secondText">Ich habe hier eine Kleinigkeit für dich versteckt!</h1>
+        <img src="picture2.jpeg" alt="Puzzle Image 2">
     </div>
 
     <script>
         const passwordInput = document.getElementById("password-input");
         const verifyButton = document.getElementById("verify-button");
-        const imageContainer = document.getElementById("image-container");
+        const firstPart = document.getElementById("firstPart");
+        const secondPart = document.getElementById("secondPart");
 
         // Define your correct password here
-        const correctPassword = "yourpassword";
+        const correctPassword = "1965";
 
         verifyButton.addEventListener("click", function () {
             if (passwordInput.value === correctPassword) {
-                imageContainer.style.display = "block";
-            } else {
-                imageContainer.style.display = "none";
+                firstPart.style.display = "none";
+                secondPart.style.display = "block";
             }
         });
     </script>
 </body>
+
 </html>
