@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Puzzle Website</title>
+    <title>Happy Birthday</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,6 +11,12 @@
             text-align: center;
             padding: 20px;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Set the body height to 100% of the viewport height */
+            margin: 0;
         }
 
         h1 {
@@ -18,40 +24,23 @@
             color: #333;
         }
 
+        .image-container {
+            max-width: 70%; /* Limit the image container to 80% of the screen width */
+            max-height: 70vh; /* Limit the image container to 80% of the screen height */
+        }
+
         img {
             max-width: 100%;
-            height: auto;
+            max-height: 100%;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .animated-text {
-            font-size: 24px;
-            color: #007bff;
-            animation: fadeIn 2s ease-in-out;
         }
     </style>
 </head>
 <body>
-    <h1>Hallo Alex, ich habe sie bereits erwartet!</h1>
-    <img src="picture.jpeg" alt="Puzzle Image">
-    <p class="animated-text">Level 6</p>
-
-    <script>
-        document.addEventListener('mousemove', (e) => {
-            const x = (window.innerWidth / 2 - e.pageX) / 20;
-            const y = (window.innerHeight / 2 - e.pageY) / 20;
-            document.body.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
-        });
-    </script>
+    <h1>Wir fangen mal ganz einfach an :)</h1>
+    <div class="image-container">
+        <img src="picture.jpeg" alt="Puzzle Image">
+    </div>
 </body>
 </html>
