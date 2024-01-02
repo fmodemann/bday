@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             text-align: center;
-            padding: 20px;
+            padding: 50px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -26,6 +26,7 @@
         .image-container {
             max-width: 100%; /* Limit the image container to 80% of the screen width */
             max-height: 80vh; /* Limit the image container to 80% of the screen height */
+            display: none; /* Initially hide the image container */
         }
 
         img {
@@ -34,12 +35,47 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
+        #password-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #verify-button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #0074cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <h1>Wir fangen mal ganz einfach an...</h1>
-    <div class="image-container">
+    <h1>Wir fangen mal ganz einfach an :)</h1>
+    <input type="password" id="password-input" placeholder="Enter Password">
+    <button id="verify-button">Verify Password</button>
+    <div class="image-container" id="image-container">
         <img src="picture.jpeg" alt="Puzzle Image">
     </div>
+
+    <script>
+        const passwordInput = document.getElementById("password-input");
+        const verifyButton = document.getElementById("verify-button");
+        const imageContainer = document.getElementById("image-container");
+
+        // Define your correct password here
+        const correctPassword = "yourpassword";
+
+        verifyButton.addEventListener("click", function () {
+            if (passwordInput.value === correctPassword) {
+                imageContainer.style.display = "block";
+            } else {
+                imageContainer.style.display = "none";
+            }
+        });
+    </script>
 </body>
 </html>
