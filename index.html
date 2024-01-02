@@ -3,9 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alles Gute Alex</title>
+    <title>Your Puzzle Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animated-text {
+            font-size: 24px;
+            color: #007bff;
+            animation: fadeIn 2s ease-in-out;
+        }
+    </style>
 </head>
 <body>
-    <h1>Alles Gute Alex</h1>
+    <h1>Hallo Alex, ich habe sie bereits erwartet!</h1>
+    <img src="turing_machine.jpg" alt="Puzzle Image">
+    <p class="animated-text">Level 6</p>
+
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth / 2 - e.pageX) / 20;
+            const y = (window.innerHeight / 2 - e.pageY) / 20;
+            document.body.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
+        });
+    </script>
 </body>
 </html>
