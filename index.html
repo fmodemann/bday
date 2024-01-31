@@ -3,94 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
-    <title>Happy Birthday</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: white;
-            text-align: center;
-            padding: 20px 50px 20px 50px ;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0;
-        }
-
-        h1 {
-            font-size: 36px;
-            color: black;
-        }
-
-        img {
-            max-width: 100%;
-            max-height: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        #firstPart,
-        #secondPart {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 50vh;
-            max-height: 50vh;
-        }
-
-        #secondPart {
-            display: none;
-        }
-
-        #password-input {
-            padding: 10px;
-            margin-top: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        #verify-button {
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #0074cc;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadsurfer Rallye</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div id="firstPart">
-        <h1>Mein Geburtsjahr</h1>
-        <img src="picture1.jpeg" alt="Puzzle Image 1">
-        <input type="password" id="password-input" placeholder="...">
-        <button id="verify-button">Prüfen</button>
-    </div>
-    <div id="secondPart">
-        <h1 id="secondText">Ich habe hier eine Kleinigkeit für dich versteckt!</h1>
-        <img src="picture2.jpeg" alt="Puzzle Image 2">
+    <img src="logo.png" alt="logo">
+
+    <div id="container">
+        <!-- <button id="refreshButton">Refresh Data</button> -->
+
+        <!-- Create an empty container div to display the received data -->
+        <div class="grid" id="dataContainer"></div>
     </div>
 
-    <script>
-        const passwordInput = document.getElementById("password-input");
-        const verifyButton = document.getElementById("verify-button");
-        const firstPart = document.getElementById("firstPart");
-        const secondPart = document.getElementById("secondPart");
-
-        // Define your correct password here
-        const correctPassword = "1965";
-
-        verifyButton.addEventListener("click", function () {
-            if (passwordInput.value === correctPassword) {
-                firstPart.style.display = "none";
-                secondPart.style.display = "block";
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
