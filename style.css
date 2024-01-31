@@ -1,0 +1,105 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #6bbbae;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+}
+
+#container {
+    max-width: 95%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#refreshButton {
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#refreshButton:hover,
+#refreshButton:focus {
+    background-color: #004494;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.kachel {
+    text-decoration: none;
+    /* Removes underline from links */
+    color: #333;
+    /* Set the text color */
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    display: block;
+    /* Make the kachel a block element */
+    transition: box-shadow 0.3s;
+}
+
+.kachel:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.kachel h3,
+.kachel p {
+    color: #333;
+    /* Ensures the text color is black */
+    margin: 0;
+    /* Adjust as needed */
+    text-decoration: none;
+    /* Removes underline from text */
+}
+
+.kachel h3 {
+    font-size: 1.2em;
+    /* Adjust the font size as needed */
+}
+
+.kachel p {
+    font-size: 1em;
+    /* Adjust the font size as needed */
+}
+
+
+/* Responsive Design */
+@media (max-width: 1160px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* Two columns for tablets */
+    }
+}
+
+@media (max-width: 800px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns for tablets */
+    }
+}
+
+@media (max-width: 586px) {
+    .grid {
+        grid-template-columns: 1fr;
+        /* One column for mobiles */
+    }
+
+    #refreshButton {
+        padding: 10px 20px;
+    }
+}
