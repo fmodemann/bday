@@ -101,7 +101,11 @@ const stations = {
 async function fetchReturns(stationNumber) {
     try {
         const stationUrl = `https://booking.roadsurfer.com/api/de/rally/stations/${stationNumber}`;
-        const stationResponse = await fetch(stationUrl);
+        const stationResponse = await fetch(stationUrl, {
+            headers = {
+                'X-Requested-Alias': 'rally.fetchRoutes'
+            }
+        });
 
         if (stationResponse.ok) {
             const stationData = await stationResponse.json();
@@ -109,7 +113,11 @@ async function fetchReturns(stationNumber) {
 
             for (const returnStation of returnStations) {
                 const tripUrl = `https://booking.roadsurfer.com/api/de/rally/timeframes/${stationNumber}-${returnStation}`;
-                const tripResponse = await fetch(tripUrl);
+                const tripResponse = await fetch(tripUrl, {
+                    headers = {
+                        'X-Requested-Alias': 'rally.timeframes'
+                    }
+                });
 
                 if (tripResponse.ok) {
                     const tripData = await tripResponse.json();
